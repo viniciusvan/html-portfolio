@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite seu email</title>
+</head>
+<body>
+    <h1>Bem-vindo! Clique no botão para digitar seu email:</h1>
+    <button onclick="mostrarForm()">Clique aqui</button>
+
+    <div id="formDiv" style="display: none;">
+        <h2>Digite seu email:</h2>
+        <form id="emailForm">
+            <input type="email" id="emailInput" placeholder="Seu email" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function mostrarForm() {
+            document.getElementById('formDiv').style.display = 'block';
+        }
+
+        document.getElementById('emailForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value.toLowerCase();
+
+            // Verifique o email e redirecione com base no valor
+            switch (email) {
+                case 'vinicius.van@propermarine.com':
+                        window.location.href = 'https://www.propermarine.com/';
+                        break;
+                    case 'sara.rocha@propermarine.com':
+                         window.location.href = 'https://www.crunchyroll.com/';
+                         break;
+                case 'email3@example.com':
+                    window.location.href = 'https://www.site3.com';
+                    break;
+                default:
+                    alert('Email não reconhecido. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>
